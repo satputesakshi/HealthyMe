@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from "react";
+import MainApp from "./MainApp";
+import { routesNav } from "./routes";
+import { NavigationContainer } from "@react-navigation/native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function App() {
+const App = () => {
+  const [isSplashLoading, setIsSplashLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsSplashLoading(false);
+    }, 4000);
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <MainApp isSplashLoading={isSplashLoading} />
+      
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
