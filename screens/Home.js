@@ -89,34 +89,23 @@ const Home = () => {
           <ScrollView horizontal={true} style={styles.container}>
             <View style={[{ width: 220, height: 70, padding: 10 }]}>
               <TouchableOpacity style={styles.scrollButton}>
-                <Text style={styles.scrollText}>General &nbsp;</Text>
-                <Icon name="stethoscope" size={20} style={styles.icon} />
+                <Text style={styles.scrollText}>Book Appointment &nbsp;</Text>
+                <Icon name="medkit" size={20} style={styles.icon} />
               </TouchableOpacity>
             </View>
             <View style={[{ width: 220, height: 70, padding: 10 }]}>
               <TouchableOpacity style={styles.scrollButton}>
-                <Text style={styles.scrollText}>Psychologist &nbsp;</Text>
-                <Icon name="lightbulb-o" size={20} style={styles.icon} />
+                <Text style={styles.scrollText}>Order Prescriptions &nbsp;</Text>
+                <Icon name="pills" size={20} style={styles.icon} />
               </TouchableOpacity>
             </View>
             <View style={[{ width: 220, height: 70, padding: 10 }]}>
               <TouchableOpacity style={styles.scrollButton}>
-                <Text style={styles.scrollText}>Dentist &nbsp;</Text>
-                <Icon name="heart-o" size={20} style={styles.icon} />
+                <Text style={styles.scrollText}>Lab Test &nbsp;</Text>
+                <Icon name="syringe" size={20} style={styles.icon} />
               </TouchableOpacity>
             </View>
-            <View style={[{ width: 220, height: 70, padding: 10 }]}>
-              <TouchableOpacity style={styles.scrollButton}>
-                <Text style={styles.scrollText}>Surgeon &nbsp;</Text>
-                <Icon name="user-md" size={20} style={styles.icon} />
-              </TouchableOpacity>
-            </View>
-            <View style={[{ width: 220, height: 70, padding: 10 }]}>
-              <TouchableOpacity style={styles.scrollButton}>
-                <Text style={styles.scrollText}>Pediatrician &nbsp;</Text>
-                <Icon name="user" size={20} style={styles.icon} />
-              </TouchableOpacity>
-            </View>
+            
           </ScrollView>
         </View>
       </View>
