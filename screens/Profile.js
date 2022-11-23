@@ -16,7 +16,11 @@ const Profile = () => {
       Antonello Messi
       </Text>    
       <Text style={styles.profiletext}>
+<<<<<<< HEAD
+      antonellomessi10@gmail.com
+=======
       antonellomessi@gmail.com
+>>>>>>> ae0324baf6c95e71a12dc029b957df9bab3d0523
       </Text>
       <View
       style={{
