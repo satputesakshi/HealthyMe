@@ -18,7 +18,7 @@ const AuthRoutes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="LandingPage"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}

@@ -204,22 +204,52 @@ const Home = () => {
                 />
               </TouchableOpacity>
             </View>
-            <View style={[{ width: 220, height: 70, padding: 10 }]}>
-              <TouchableOpacity style={styles.scrollButton}>
-                <Text style={styles.scrollText}>Dentist &nbsp;</Text>
-                <Icon name="heart-o" size={20} style={styles.icon} />
+
+            <View style={[{ width: 180, height: 130, padding: 5 }]}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://www.who.int/teams/global-influenza-programme/surveillance-and-monitoring/influenza-updates/current-influenza-update"
+                  )
+                }
+              >
+                <Image
+                  style={{ width: 150, height: 130 }}
+                  resizeMode="contain"
+                  source={require("../assets/flu.png")}
+                />
               </TouchableOpacity>
             </View>
-            <View style={[{ width: 220, height: 70, padding: 10 }]}>
-              <TouchableOpacity style={styles.scrollButton}>
-                <Text style={styles.scrollText}>Surgeon &nbsp;</Text>
-                <Icon name="user-md" size={20} style={styles.icon} />
+
+            <View style={[{ width: 180, height: 130, padding: 5 }]}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://www.who.int/news-room/fact-sheets/detail/diabetes"
+                  )
+                }
+              >
+                <Image
+                  style={{ width: 150, height: 130 }}
+                  resizeMode="contain"
+                  source={require("../assets/diab.png")}
+                />
               </TouchableOpacity>
             </View>
-            <View style={[{ width: 220, height: 70, padding: 10 }]}>
-              <TouchableOpacity style={styles.scrollButton}>
-                <Text style={styles.scrollText}>Pediatrician &nbsp;</Text>
-                <Icon name="user" size={20} style={styles.icon} />
+
+            <View style={[{ width: 180, height: 130, padding: 5 }]}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://www.who.int/health-topics/cardiovascular-diseases#tab=tab_1"
+                  )
+                }
+              >
+                <Image
+                  style={{ width: 150, height: 130 }}
+                  resizeMode="contain"
+                  source={require("../assets/heart.png")}
+                />
               </TouchableOpacity>
             </View>
           </ScrollView>
