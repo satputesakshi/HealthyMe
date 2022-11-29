@@ -14,19 +14,18 @@ import React, { useEffect, useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { SearchBar } from "@rneui/themed";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-
 //import { BottomTabNavigator } from '../routes'
-
-const Home = () => {
+const Home = ({ navigation }) => {
   const [search, setSearch] = useState("");
 
   return (
     <SafeAreaView>
+
       <ScrollView vertical={true}>
         <View style={styles.mainWindow}>
           <View style={styles.header}>
             <Text style={styles.welcomeHeader}>
-              Hello, Antonello&nbsp;
+              Hello, Sakshi&nbsp;
               <Icon name="heartbeat" size={25} color="#D22B2B" />
             </Text>
             <Image
@@ -89,7 +88,10 @@ const Home = () => {
 
             <ScrollView horizontal={true} style={{ marginLeft: 10 }}>
               <View style={[{ width: 180, height: 130, padding: 10 }]}>
-                <TouchableOpacity style={styles.scrollButton}>
+                <TouchableOpacity
+                  style={styles.scrollButton}
+                  onPress={() => navigation.navigate("BookAppointment")}
+                >
                   <Icon name="calendar-plus-o" size={30} style={styles.icon} />
                   <Text style={styles.scrollText}>Book Appointment&nbsp;</Text>
                 </TouchableOpacity>

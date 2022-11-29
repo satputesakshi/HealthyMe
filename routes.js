@@ -9,6 +9,8 @@ import Home from "./screens/Home";
 import Profile from "./screens/Profile";
 import Appointment from "./screens/Appointment";
 import Icon from "react-native-vector-icons/FontAwesome";
+import BookAppointment from "./screens/BookAppointment";
+import DoctorBooking from "./screens/DoctorBooking"
 //import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
@@ -25,7 +27,9 @@ const AuthRoutes = () => {
       >
         <Stack.Screen name="Login" component={Login}  />
         <Stack.Screen name="Register" component={SignUp} />
-        <Stack.Screen name="LandingPage" component={BottomTabNavigator} />
+        <Stack.Screen name="LandingPage" component={BottomTabNavigator}/>
+        <Stack.Screen name="BookAppointment" component={BookAppointment} />
+        <Stack.Screen name = "DoctorBooking" component={DoctorBooking}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

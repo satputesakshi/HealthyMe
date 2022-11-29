@@ -12,11 +12,15 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { url } from "../config";
 import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useDispatch } from "react-redux";
+import { signin } from "../action/appAction";
 // import SignUp from "./SignUp";
 // import { useNavigation } from "@react-navigation/native";
 // import { routes } from "../routes";
 
 const Login = ({ navigation }) => {
+  const dispatch = useDispatch();
   const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
   const [email, setemail] = useState("");
   const [pass, setPass] = useState("");
@@ -25,18 +29,7 @@ const Login = ({ navigation }) => {
     setemail("");
     setPass("");
   }, []);
-  const validate = (newText) => {
-    console.log(newText);
-    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
-    if (reg.test(newText) === false) {
-      alert("Please enter email in right format");
-      setemail({ email: newText });
-      return false;
-    } else {
-      setemail({ email: newText });
-      console.log("Email is Correct");
-    }
-  };
+
   const submitHandler = async (e) => {
     if (email == "") {
       alert("Please enter Username");
@@ -59,6 +52,8 @@ const Login = ({ navigation }) => {
         // const userInfo = await AsyncStorage.getItem("userInfo");
         // const parseUserInfo = JSON.parse(userInfo);
         //dispatch(loggedInAcademy(parseUserInfo.name));
+        await AsyncStorage.setItem("userInfo", JSON.stringify(data));
+        dispatch(signin());
         navigation.navigate("LandingPage");
         console.log(`${email} Successfully logged in`);
       } catch (error) {
