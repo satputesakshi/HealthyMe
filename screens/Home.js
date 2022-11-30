@@ -97,7 +97,8 @@ const Home = ({ navigation }) => {
                 </TouchableOpacity>
               </View>
               <View style={[{ width: 180, height: 130, padding: 10 }]}>
-                <TouchableOpacity style={styles.scrollButton}>
+                <TouchableOpacity style={styles.scrollButton}
+                onPress={() => navigation.navigate("Prescription")}>
                   <Icon name="medkit" size={30} style={styles.icon} />
                   <Text style={styles.scrollText}>
                     Order Prescription &nbsp;
@@ -164,9 +165,9 @@ const Home = ({ navigation }) => {
                 ]}
               >
                 <View style={{ marginLeft: 10, color: "black", padding: 20 }}>
-                  <Text>Appointment Date: 12th November&nbsp;</Text>
-                  <Text>Time: 2:00 PM&nbsp;</Text>
-                  <Text>Location: Purva Clinic&nbsp;</Text>
+                  <Text>Appointment Date: 30th November&nbsp;</Text>
+                  <Text>Time: 1:00 PM&nbsp;</Text>
+                  <Text>Location: King Hospital, Waterloo&nbsp;</Text>
                 </View>
                 <Icon
                   name="calendar-o"

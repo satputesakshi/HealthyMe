@@ -36,17 +36,21 @@ const Appointment = ({ appReducer: { days }, route }) => {
   const getLatestApp = () => {
     const date = new Date();
     const currDate = moment(date).format("YYYY-MM-DD");
-    const currentBookings = days.filter((day) => day.date > currDate);
+    const currentBookings = days.filter((day) => day.date === currDate);
     setLatestAppointmentDate(currentBookings[0].date);
     if (currentBookings) {
       const bookedDate = currentBookings[0].timeSlot.filter(
         (cb) => cb.isBooked === true
       );
 
-      console.log(bookedDate);
+      console.log("Booked date "+bookedDate);
       if (bookedDate.length > 0) {
-        if (bookedDate[0].time) setLatestAppointmentTime(bookedDate[0].time);
-        // console.log(bookedDate)
+        if (bookedDate[0].time) 
+          {
+            console.log("@@Appointment Time: "+bookedDate[0].time)
+            setLatestAppointmentTime(bookedDate[0].time);
+            console.log("Appointment Time: "+bookedDate[0].time)
+          }
       } else {
         console.log("No appointments booked yet");
       }
@@ -87,6 +91,8 @@ const Appointment = ({ appReducer: { days }, route }) => {
   }
   return (
     <SafeAreaView>
+      
+      <ScrollView>
       <View style={styles.mainWindow}>
         <View style={styles.header}>
           <Text style={styles.welcomeHeader}>
@@ -143,10 +149,10 @@ const Appointment = ({ appReducer: { days }, route }) => {
           Time: {latestAppointmentTime ? latestAppointmentTime : "N/A"}&nbsp;
         </Text>
         <Text style={{ fontSize: 14, marginLeft: 27, fontWeight: "normal" }}>
-          Doctor Name: {doctorDetails.firstname} {doctorDetails.lastname}&nbsp;
+          Doctor Name: {doctorDetails? doctorDetails.firstname : "N/A"}&nbsp;
         </Text>
         <Text style={{ fontSize: 14, marginLeft: 27, fontWeight: "normal" }}>
-          Clinic Name: King Hospital, Waterloo &nbsp;
+          Clinic Name: King Hospital, Waterloo&nbsp;
         </Text>
         <Text
           style={{
@@ -156,7 +162,7 @@ const Appointment = ({ appReducer: { days }, route }) => {
             marginBottom: 10,
           }}
         >
-          Clinic Address:247, King Dental&nbsp;
+          Clinic Address:247, King West&nbsp;
         </Text>
       </View>
       <View>
@@ -176,6 +182,7 @@ const Appointment = ({ appReducer: { days }, route }) => {
           </TouchableOpacity>
       </View>
       </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

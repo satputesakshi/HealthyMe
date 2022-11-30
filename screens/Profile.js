@@ -2,21 +2,42 @@ import { StyleSheet, Text, View, Image, TouchableOpacity,ScrollView,Button} from
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/FontAwesome";
 import React from 'react';
+import { signout } from "../action/appAction";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useDispatch } from "react-redux";
 
-const Profile = () => {
+import { useState, useEffect } from "react";
+
+const Profile = ({navigation}, route) => {
+  const dispatch = useDispatch();
+  const [healthCardno, sethealthCardno] = useState(route.params);
+ const healthCardno1 = route.params;
+console.log(healthCardno);
+console.log(healthCardno1);
+
+  const logoutUser = async () => {
+    alert("Log out success");
+    navigation.navigate("Login");
+  };
+
   return (
     <SafeAreaView>
     <View>
+    {/* <View style={{marginTop:20, marginLeft:30,padding:0}}>
+            <TouchableOpacity onPress={()=> navigation.pop()}>                
+          <Icon name="arrow-left" size={20} color="black" />
+          </TouchableOpacity>
+          </View> */}
     <Image
             style={styles.profileImage}
             resizeMode="contain"
             source={require("../assets/profileImage.jpg")}
           /> 
      <Text style={styles.profile}>
-      Antonello Messi
+      Sakshi Satpute
       </Text>    
       <Text style={styles.profiletext}>
-      antonellomessi@gmail.com
+      Ss1@gmail.com &nbsp; {healthCardno}
       </Text>
       <View
       style={{
@@ -25,10 +46,15 @@ const Profile = () => {
       marginTop:20
   }}
 />
+
+      
+<TouchableOpacity onPress={()=> navigation.navigate("ProfileDetails")}>
       <View style ={{flexDirection: 'row'}}> 
       <Icon style={{marginTop: 30, marginLeft:15}} name="user" size={20} color="#4169E1" /> 
       <Text style={styles.emailtext}>My Profile</Text>
       </View>
+      
+      </TouchableOpacity>
 
       <View
       style={{
@@ -86,12 +112,15 @@ const Profile = () => {
       marginTop:20
   }}
 />
-<View style ={{flexDirection: 'row'}}> 
+    <TouchableOpacity onPress={() => logoutUser()}>
+      <View style ={{flexDirection: 'row'}}> 
       <Icon style={{marginTop: 30, marginLeft:15}} name="sign-out" size={20} color="#4169E1" /> 
       <Text style={styles.emailtext}>Logout</Text>
       </View>
 
+    </TouchableOpacity>
     </View>
+    
     </SafeAreaView>
   )
 }

@@ -21,8 +21,8 @@ const BookAppointment = ({navigation}) => {
   const searchFilterFunction = (text) => {
     if (text) {
       const newData = masterDataSource.filter(function (item) {
-        const itemData = `${item.firstname} ${item.lastname}`
-          ? `${item.firstname} ${item.lastname}`.toUpperCase()
+        const itemData = `${item.lastname} ${item.title}`
+          ? `${item.lastname} ${item.title}`.toUpperCase()
           : "".toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;

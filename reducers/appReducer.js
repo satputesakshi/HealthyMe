@@ -52,7 +52,7 @@ const initialState = {
     },
     {
       id: 1,
-      date: "2022-11-29",
+      date: "2022-12-01",
       timeSlot: [
         {
           id: 0,
@@ -95,12 +95,17 @@ const initialState = {
           time: "3:00 PM",
           isBooked: false,
           isSelected: false,
+        },{
+          id: 7,
+          time: "3:00 PM",
+          isBooked: false,
+          isSelected: false,
         },
       ],
     },
     {
       id: 3,
-      date: "2022-11-29",
+      date: "2022-11-30",
       timeSlot: [
         {
           id: 0,

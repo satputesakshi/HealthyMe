@@ -17,7 +17,9 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <MainApp isSplashLoading={isSplashLoading} />
+      <NavigationContainer>
+        <MainApp isSplashLoading={isSplashLoading} />
+      </NavigationContainer>
     </Provider>
   );
 };

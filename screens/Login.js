@@ -54,8 +54,19 @@ const Login = ({ navigation }) => {
         //dispatch(loggedInAcademy(parseUserInfo.name));
         await AsyncStorage.setItem("userInfo", JSON.stringify(data));
         dispatch(signin());
+        console.log("user data aftr login", data.custType);
+        if (data.custType == 'Patient'){
+          alert(`${email} Successfully logged in`);
+          navigation.navigate("LandingPage");
+        }
+        else if (data.custType == 'Doctor'){
+          alert(`${email} Successfully logged in`);
+          navigation.navigate("DoctorStack");
+        }
+      else {
+        alert(`${email} Successfully logged in`);
         navigation.navigate("LandingPage");
-        console.log(`${email} Successfully logged in`);
+      }
       } catch (error) {
         alert(error);
         setemail("");
@@ -107,6 +118,12 @@ const Login = ({ navigation }) => {
             onPress={() => navigation.navigate("Register")}
           >
             <Text style={styles.signuptext}>SIGN UP</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.lowerTextContainer}>
+          <TouchableOpacity
+            style={styles.signUpContainer}          >
+            <Text style={{textDecorationLine:"underline"}}>Forgot Password</Text>
           </TouchableOpacity>
         </View>
       </View>

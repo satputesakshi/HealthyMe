@@ -247,10 +247,13 @@ const DoctorBooking = ({
                       </View>
                     ) : (
                       <TouchableOpacity
-                        style={styles.appointmentTab}
+                        disabled = {item.isSelected}
                         onPress={() => handleSelected(item)}
                       >
+                        <View style={[styles.appointmentTab,  {backgroundColor: item.isBooked ? "yellow" : "white" }]}>
                         <Text>{item.time}</Text>
+                      </View>
+                        
                       </TouchableOpacity>
                     )}
                   </View>

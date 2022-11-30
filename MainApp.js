@@ -14,7 +14,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const MainApp = ({ isSplashLoading }) => {
-  const isSignedIn = useSelector((state) => state.isSignedIn);
+  const isSignedIn = useSelector((state) => state.appReducer.isSignedIn);
   const dispatch = useDispatch();
 
   const getUserSignIn = async () => {
@@ -32,15 +32,16 @@ const MainApp = ({ isSplashLoading }) => {
   };
   
   useEffect(() => {
-    console.log(isSignedIn)
+    //console.log("Issigneed in before update: "+ isSignedIn)
     getUserSignIn();
   });
+  {/* {isSplashLoading ? <SplashScreen /> : (isSignedIn ? <BottomTabNavigator /> : <AuthRoutes />)} */}
 
-  {/* {isSplashLoading ? <SplashScreen /> :  <AuthRoutes />} */}
   return (
     <>
-    {isSplashLoading ? <SplashScreen /> : (isSignedIn ? <BottomTabNavigator /> : <AuthRoutes />)}
+      {isSplashLoading ? <SplashScreen /> :  <AuthRoutes />}
     </>
+    
   );
 };
 

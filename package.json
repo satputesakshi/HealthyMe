@@ -30,6 +30,7 @@
     "react-native": "0.69.6",
     "react-native-axios": "^0.17.1",
     "react-native-calendars": "^1.1291.1",
+    "react-native-circular-progress-indicator": "^4.4.0",
     "react-native-gesture-handler": "~2.5.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-neat-date-picker": "^1.4.7",
